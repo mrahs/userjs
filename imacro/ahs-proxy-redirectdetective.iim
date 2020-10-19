@@ -1,0 +1,9 @@
+﻿'RedirectDetective v1.0.0  - Copyright (c) 2014 Anas H. Sulaiman (AHS.PW) - Licensed under the GPL3 License
+'Post current URL to redirectdetective.com web service
+
+VERSION BUILD=8871104 RECORDER=FX
+TAB T=1
+ADD !EXTRACT {{!URLCURRENT}}
+URL GOTO=redirectdetective.com/
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:f1 ATTR=ID:input CONTENT={{!EXTRACT}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=NAME:f1 ATTR=*

@@ -1,0 +1,9 @@
+﻿'Hideme v1.0.0  - Copyright (c) 2014 Anas H. Sulaiman (AHS.PW) - Licensed under the GPL3 License
+'Open current URL using hideme.be web proxy
+
+VERSION BUILD=8871104 RECORDER=FX
+TAB T=1
+ADD !EXTRACT {{!URLCURRENT}}
+URL GOTO=hideme.be/
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:includes/process.php?action=update ATTR=ID:input CONTENT={{!EXTRACT}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:includes/process.php?action=update ATTR=*
